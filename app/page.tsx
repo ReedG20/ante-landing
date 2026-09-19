@@ -1,6 +1,8 @@
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Camera01Icon, Coins01Icon, LockIcon } from "@hugeicons/core-free-icons"
 
+import Link from "next/link"
+
 import { SiteHeader } from "@/components/site-header"
 import { WaitlistForm } from "@/components/waitlist-form"
 
@@ -102,15 +104,18 @@ export default function Page() {
       <footer className="flex flex-col gap-2 border-t py-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <span>© {new Date().getFullYear()} Ante</span>
         <div className="flex gap-4">
-          <a href="mailto:hello@useanteapp.com" className="hover:text-foreground">
+          <a
+            href="mailto:hello@useanteapp.com"
+            className="hover:text-foreground"
+          >
             hello@useanteapp.com
           </a>
-          <a href="#" className="hover:text-foreground">
+          <Link href="/privacy" className="hover:text-foreground">
             Privacy
-          </a>
-          <a href="#" className="hover:text-foreground">
+          </Link>
+          <Link href="/terms" className="hover:text-foreground">
             Terms
-          </a>
+          </Link>
         </div>
       </footer>
     </div>

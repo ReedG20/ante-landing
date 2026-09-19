@@ -13,6 +13,7 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://useanteapp.com"),
   title: "Ante — Habit tracking with real stakes",
   description:
     "Ante is a habit and goal tracking app. Put money on a goal, check in with verified logs, and get it back when you follow through. Join the waitlist.",
