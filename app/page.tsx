@@ -102,8 +102,8 @@ export default function Page() {
       <footer className="flex flex-col gap-2 border-t py-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <span>© {new Date().getFullYear()} Ante</span>
         <div className="flex gap-4">
-          <a href="mailto:hello@ante.app" className="hover:text-foreground">
-            hello@ante.app
+          <a href="mailto:hello@useanteapp.com" className="hover:text-foreground">
+            hello@useanteapp.com
           </a>
           <a href="#" className="hover:text-foreground">
             Privacy
