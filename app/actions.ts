@@ -51,7 +51,13 @@ export async function joinWaitlist(
           message: "Too many requests. Please try again in a minute.",
         }
       }
-      console.error("Resend contacts.create failed:", error)
+      if (error.name === "restricted_api_key") {
+        console.error(
+          "RESEND_API_KEY has sending-only permission. Adding contacts requires a key with Full access (resend.com/api-keys)."
+        )
+      } else {
+        console.error("Resend contacts.create failed:", error)
+      }
       return { status: "error", message: GENERIC_ERROR }
     }
 
