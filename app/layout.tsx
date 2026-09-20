@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
+import localFont from "next/font/local"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -10,6 +11,12 @@ const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+})
+
+const fontHeading = localFont({
+  src: "../public/fonts/Comico-Regular.woff2",
+  variable: "--font-comico",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -31,7 +38,8 @@ export default function RootLayout({
       className={cn(
         "font-sans antialiased",
         fontSans.variable,
-        fontMono.variable
+        fontMono.variable,
+        fontHeading.variable
       )}
     >
       <body>
