@@ -1,6 +1,7 @@
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Camera01Icon, Coins01Icon, LockIcon } from "@hugeicons/core-free-icons"
 
+import Image from "next/image"
 import Link from "next/link"
 
 import { SiteHeader } from "@/components/site-header"
@@ -45,19 +46,30 @@ export default function Page() {
       <SiteHeader />
 
       <main className="flex flex-1 flex-col gap-20 py-16 sm:py-24">
-        <section className="flex flex-col gap-6">
-          <span className="w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-            Coming soon to iOS
-          </span>
-          <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-            Habit tracking with real stakes.
-          </h1>
-          <p className="max-w-xl text-lg text-muted-foreground">
-            Ante is a habit and goal tracking app. You put money on a goal,
-            check in with verified logs, and get the money back when you follow
-            through. If you don&apos;t, you lose it.
-          </p>
-          <WaitlistForm className="mt-2" />
+        <section className="flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-6">
+            <span className="w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              Coming soon to iOS
+            </span>
+            <h1 className="font-heading text-4xl text-balance sm:text-5xl">
+              Habit tracking with real stakes.
+            </h1>
+            <p className="max-w-xl text-lg text-muted-foreground">
+              Ante is a habit and goal tracking app. You put money on a goal,
+              check in with verified logs, and get the money back when you
+              follow through. If you don&apos;t, you lose it.
+            </p>
+            <WaitlistForm className="mt-2" />
+          </div>
+          <Image
+            src="/ante-mockup.png"
+            alt="The Ante habits screen on an iPhone, showing the cost of skipping today and a list of daily habits"
+            width={900}
+            height={1840}
+            priority
+            sizes="(min-width: 640px) 240px, 200px"
+            className="mx-auto w-[200px] shrink-0 sm:mx-0 sm:w-[240px]"
+          />
         </section>
 
         <section className="grid gap-8 sm:grid-cols-3">
