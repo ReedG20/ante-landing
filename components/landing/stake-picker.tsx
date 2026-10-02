@@ -65,14 +65,12 @@ function Fact({ children }: { children: React.ReactNode }) {
 
 function MoneyPreview() {
   return (
-    <div className="flex h-full flex-col gap-8">
+    <div className="flex h-full flex-col gap-6">
       <div className="flex flex-col items-center gap-1 pt-4 text-center">
         <p className="text-sm font-medium text-muted-foreground">
           If you miss a day
         </p>
-        <p className="font-heading text-[5.5rem] leading-none text-stake">
-          $20
-        </p>
+        <p className="font-heading text-7xl leading-none text-stake">$20</p>
         <p className="text-sm font-medium text-muted-foreground">
           is charged to <span className="text-foreground">Visa •••• 4242</span>
         </p>
@@ -317,7 +315,7 @@ function StakePicker() {
               onClick={() => setKind(option.kind)}
               onKeyDown={(event) => onKeyDown(event, index)}
               className={cn(
-                "group flex items-start gap-4 rounded-[28px] border-2 p-4 text-left transition-colors outline-none focus-visible:ring-4 focus-visible:ring-ring/30 sm:p-5",
+                "group flex items-start gap-4 rounded-[24px] border-2 p-4 text-left transition-colors outline-none focus-visible:ring-4 focus-visible:ring-ring/30 sm:p-5",
                 selected
                   ? "border-primary bg-background"
                   : "border-transparent bg-muted hover:bg-accent"
@@ -325,7 +323,7 @@ function StakePicker() {
             >
               <span
                 className={cn(
-                  "flex size-12 shrink-0 items-center justify-center rounded-2xl transition-colors",
+                  "flex size-11 shrink-0 items-center justify-center rounded-2xl transition-colors",
                   selected
                     ? "bg-primary text-primary-foreground"
                     : "bg-background text-foreground"
@@ -339,7 +337,7 @@ function StakePicker() {
               </span>
               <span className="flex min-w-0 flex-1 flex-col gap-1">
                 <span className="flex flex-wrap items-center gap-2">
-                  <span className="text-[17px] font-semibold">
+                  <span className="text-base font-semibold">
                     {option.title}
                   </span>
                   {option.badge && (
@@ -368,7 +366,7 @@ function StakePicker() {
         role="tabpanel"
         id={`${id}-panel`}
         aria-labelledby={`${id}-tab-${kind}`}
-        className="relative flex flex-col rounded-[40px] border-2 p-6 sm:p-8"
+        className="relative flex flex-col rounded-[32px] border-2 p-6 sm:p-7"
       >
         <div className="mb-6 flex items-center justify-between gap-3 border-b pb-5">
           <div className="min-w-0">

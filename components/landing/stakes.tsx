@@ -7,7 +7,7 @@ function Stakes() {
   return (
     <section
       id="stakes"
-      className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28"
+      className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20"
     >
       <Reveal>
         <SectionHeading
@@ -21,7 +21,7 @@ function Stakes() {
           lede="Money on your card, a friend who finds out, a lockout, or just your word. Pick one and see exactly what happens."
         />
       </Reveal>
-      <Reveal className="mt-14 sm:mt-16" delay={100}>
+      <Reveal className="mt-10 sm:mt-12" delay={100}>
         <StakePicker />
       </Reveal>
     </section>

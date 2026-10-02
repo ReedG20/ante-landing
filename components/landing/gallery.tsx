@@ -7,7 +7,7 @@ import { SectionHeading } from "./section-heading"
 
 function Gallery() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-16 sm:py-20">
       <Reveal className="mx-auto w-full max-w-6xl px-5 sm:px-8">
         <SectionHeading
           kicker="Inside Ante"
@@ -17,17 +17,17 @@ function Gallery() {
       </Reveal>
 
       <Reveal delay={100}>
-        <ul className="mt-14 flex snap-x snap-mandatory scroll-px-5 [scrollbar-width:none] gap-5 overflow-x-auto px-5 pb-6 sm:scroll-px-8 sm:gap-8 sm:px-8 lg:scroll-px-[max(2rem,calc((100vw-72rem)/2+2rem))] lg:px-[max(2rem,calc((100vw-72rem)/2+2rem))] [&::-webkit-scrollbar]:hidden">
+        <ul className="mt-10 flex snap-x snap-mandatory scroll-px-5 [scrollbar-width:none] gap-5 overflow-x-auto px-5 pb-6 sm:scroll-px-8 sm:gap-8 sm:px-8 lg:scroll-px-[max(2rem,calc((100vw-72rem)/2+2rem))] lg:px-[max(2rem,calc((100vw-72rem)/2+2rem))] [&::-webkit-scrollbar]:hidden">
           {GALLERY.map((shot) => (
             <li
               key={shot.id}
-              className="flex w-[248px] shrink-0 snap-start flex-col items-center gap-4 sm:w-[304px]"
+              className="flex w-[232px] shrink-0 snap-start flex-col items-center gap-3 sm:w-[268px]"
             >
-              <div className="w-full rounded-[44px] bg-muted px-6 pt-8 pb-6 sm:px-8 sm:pt-10">
+              <div className="w-full rounded-[36px] bg-muted px-6 pt-7 pb-5 sm:px-7 sm:pt-8">
                 <PhoneShot
                   shot={shot}
-                  sizes="(min-width: 640px) 240px, 200px"
-                  className="mx-auto w-[200px] sm:w-[240px]"
+                  sizes="(min-width: 640px) 214px, 184px"
+                  className="mx-auto w-[184px] sm:w-[214px]"
                 />
               </div>
               <div className="flex flex-col items-center gap-0.5 text-center">

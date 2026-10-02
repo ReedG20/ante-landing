@@ -41,9 +41,9 @@ function Faq() {
   return (
     <section
       id="faq"
-      className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28"
+      className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20"
     >
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
         <Reveal className="flex flex-col gap-6">
           <SectionHeading kicker="FAQ" title="Fair questions." />
           <p className="text-muted-foreground">
@@ -57,19 +57,19 @@ function Faq() {
           </p>
         </Reveal>
 
-        <Reveal delay={100} className="flex flex-col gap-3">
+        <Reveal delay={100} className="flex flex-col gap-2.5">
           {QUESTIONS.map((item) => (
             <details
               key={item.q}
-              className="group rounded-[28px] bg-muted transition-colors open:bg-transparent open:ring-2 open:ring-border"
+              className="group rounded-[24px] bg-muted transition-colors open:bg-transparent open:ring-2 open:ring-border"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[28px] px-6 py-5 text-lg font-semibold outline-none focus-visible:ring-4 focus-visible:ring-ring/30 [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[24px] px-5 py-4 text-base font-semibold outline-none focus-visible:ring-4 focus-visible:ring-ring/30 sm:px-6 sm:text-[17px] [&::-webkit-details-marker]:hidden">
                 {item.q}
                 <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-background transition-transform duration-300 group-open:rotate-45 group-open:bg-muted">
                   <HugeiconsIcon icon={Add01Icon} size={16} strokeWidth={2} />
                 </span>
               </summary>
-              <p className="px-6 pb-6 text-[17px] leading-relaxed text-muted-foreground">
+              <p className="px-5 pb-5 text-[15px] leading-relaxed text-muted-foreground sm:px-6 sm:text-base">
                 {item.a}
               </p>
             </details>

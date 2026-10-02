@@ -16,7 +16,7 @@ import { SectionHeading } from "./section-heading"
 
 function PhotoStage() {
   return (
-    <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-[radial-gradient(120%_80%_at_50%_100%,#2a2450_0%,#16142a_60%)]">
+    <div className="relative aspect-[5/6] overflow-hidden rounded-[24px] bg-[radial-gradient(120%_80%_at_50%_100%,#2a2450_0%,#16142a_60%)]">
       <div className="absolute inset-0 flex items-center justify-center text-glow-soft/80">
         <HugeiconsIcon icon={Dumbbell01Icon} size={84} strokeWidth={1.25} />
       </div>
@@ -144,7 +144,7 @@ function ProofBand() {
   return (
     <section className="dark relative overflow-hidden bg-proof text-white">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[480px] bg-[radial-gradient(60%_100%_at_50%_0%,rgba(124,102,255,0.22),transparent)]" />
-      <div className="relative mx-auto w-full max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
+      <div className="relative mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
         <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
           <Reveal>
             <SectionHeading
@@ -164,17 +164,17 @@ function ProofBand() {
           </Reveal>
         </div>
 
-        <div className="mt-16 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:mt-12 md:grid-cols-3">
           {METHODS.map((method, index) => (
             <Reveal
               key={method.title}
               delay={index * 120}
-              className="flex flex-col gap-5 rounded-[32px] bg-white/[0.04] p-4 ring-1 ring-white/[0.06]"
+              className="flex flex-col gap-4 rounded-[28px] bg-white/[0.04] p-4 ring-1 ring-white/[0.06]"
             >
               {method.stage}
               <div className="flex flex-col gap-2 px-2 pb-2">
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className="flex items-center gap-2 text-xl font-semibold">
+                  <h3 className="flex items-center gap-2 text-lg font-semibold">
                     <HugeiconsIcon
                       icon={method.icon}
                       size={20}
