@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Inter, Mansalva } from "next/font/google"
 import localFont from "next/font/local"
 
 import "./globals.css"
@@ -19,9 +19,16 @@ const fontHeading = localFont({
   display: "swap",
 })
 
+// The coach's handwriting: the app's notes in the margins.
+const fontNote = Mansalva({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-mansalva",
+})
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://useanteapp.com"),
-  title: "Ante — Habit tracking with real stakes",
+  title: "Ante — Put something on the line",
   description:
     "Ante is a habit and goal tracker for iPhone. Prove every check-in, and choose what a miss costs you: money charged to your card, a friend finding out, or a lockout.",
 }
@@ -39,10 +46,15 @@ export default function RootLayout({
         "font-sans antialiased",
         fontSans.variable,
         fontMono.variable,
-        fontHeading.variable
+        fontHeading.variable,
+        fontNote.variable
       )}
     >
       <body>
+        {/* Without JavaScript nothing scrolls into view, so show it all. */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important}[data-draw]{stroke-dashoffset:0!important}`}</style>
+        </noscript>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
