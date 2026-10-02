@@ -11,11 +11,13 @@ function LegalPage({
   children: React.ReactNode
 }) {
   return (
-    <div className="mx-auto flex min-h-svh w-full max-w-3xl flex-col px-6">
+    <div className="flex min-h-svh flex-col">
       <SiteHeader />
-      <main className="flex flex-1 flex-col gap-8 py-16">
+      <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-5 py-16 sm:px-8 sm:py-20">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
+          <h1 className="font-heading text-4xl tracking-tight sm:text-5xl">
+            {title}
+          </h1>
           <p className="text-sm text-muted-foreground">
             Last updated {updated}
           </p>
