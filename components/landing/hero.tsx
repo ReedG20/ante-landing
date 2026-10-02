@@ -66,7 +66,7 @@ function Hero() {
           className="absolute top-[18%] -left-1 motion-safe:animate-[float_6s_ease-in-out_infinite] sm:-left-6"
           style={{ "--tilt": "-4deg" } as React.CSSProperties}
         >
-          <StakeChip className="h-9 px-4 text-[15px]">$20 on it</StakeChip>
+          <StakeChip className="h-9 px-4 text-[15px]">$50 on it</StakeChip>
         </div>
 
         <div
@@ -82,7 +82,7 @@ function Hero() {
               fill="currentColor"
               className="text-stake"
             />
-            12 day streak
+            41 day streak
           </span>
         </div>
 
