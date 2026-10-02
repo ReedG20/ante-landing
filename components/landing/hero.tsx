@@ -15,21 +15,21 @@ const shown = { "data-reveal": "", "data-shown": "" }
 
 function Hero() {
   return (
-    <section className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 pt-10 pb-16 sm:px-8 sm:pt-14 lg:grid-cols-[1.15fr_1fr] lg:gap-8 lg:pt-14 lg:pb-20">
-      <div className="flex flex-col items-start gap-7" {...shown}>
+    <section className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-5 pt-8 pb-12 sm:px-8 sm:pt-12 lg:grid-cols-[1.15fr_1fr] lg:gap-8 lg:pt-12 lg:pb-16">
+      <div className="flex flex-col items-start gap-6" {...shown}>
         <span className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
           <span className="size-1.5 rounded-full bg-primary" />
           For iPhone
         </span>
 
-        <h1 className="font-heading text-[3.1rem] leading-[0.98] tracking-tight text-balance sm:text-7xl lg:text-[4.6rem] xl:text-[5.2rem]">
+        <h1 className="font-heading text-[2.75rem] leading-[0.98] tracking-tight text-balance sm:text-6xl lg:text-[4rem] xl:text-[4.5rem]">
           Put something on the{" "}
           <HandLoop strokeWidth={4.5} delay={700}>
             line.
           </HandLoop>
         </h1>
 
-        <p className="max-w-[34rem] text-lg leading-relaxed text-muted-foreground sm:text-xl">
+        <p className="max-w-[32rem] text-base leading-relaxed text-muted-foreground sm:text-lg">
           Ante is a habit and goal tracker that holds you to what you said
           you&apos;d do. Prove every check-in, and choose what a miss costs you:
           money, a friend finding out, or a lockout.
@@ -48,7 +48,7 @@ function Hero() {
       </div>
 
       <div
-        className="relative mx-auto w-full max-w-[420px]"
+        className="relative mx-auto w-full max-w-[380px]"
         {...shown}
         style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
       >
@@ -58,8 +58,8 @@ function Hero() {
         <PhoneShot
           shot={SCREENSHOTS.today}
           preload
-          sizes="(min-width: 1024px) 300px, 260px"
-          className="relative mx-auto w-[260px] sm:w-[300px]"
+          sizes="(min-width: 640px) 270px, 240px"
+          className="relative mx-auto w-[240px] sm:w-[270px]"
         />
 
         <div

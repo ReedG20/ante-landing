@@ -175,7 +175,7 @@ function Deal() {
   return (
     <section
       id="how"
-      className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28"
+      className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20"
     >
       <Reveal>
         <SectionHeading
@@ -185,21 +185,21 @@ function Deal() {
         />
       </Reveal>
 
-      <ol className="mt-16 flex flex-col gap-6 sm:mt-20">
+      <ol className="mt-10 flex flex-col gap-5 sm:mt-12">
         {RULES.map((rule, index) => (
           <Reveal
             as="li"
             key={rule.title}
-            className="grid items-center gap-8 rounded-[40px] bg-muted p-6 sm:p-10 md:grid-cols-2 md:gap-14 lg:p-14"
+            className="grid items-center gap-8 rounded-[32px] bg-muted p-6 sm:p-8 md:grid-cols-2 md:gap-12 lg:p-10"
           >
-            <div className="flex flex-col gap-4">
-              <span className="font-heading text-6xl leading-none text-violet-text sm:text-7xl">
+            <div className="flex flex-col gap-3">
+              <span className="font-heading text-5xl leading-none text-violet-text sm:text-6xl">
                 {index + 1}
               </span>
-              <h3 className="font-heading text-3xl leading-tight sm:text-4xl">
+              <h3 className="font-heading text-2xl leading-tight sm:text-3xl">
                 {rule.title}
               </h3>
-              <p className="max-w-md text-lg leading-relaxed text-muted-foreground">
+              <p className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-[17px]">
                 {rule.body}
               </p>
             </div>
