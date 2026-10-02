@@ -1,42 +1,50 @@
 import { HugeiconsIcon } from "@hugeicons/react"
-import { Camera01Icon, Coins01Icon, LockIcon } from "@hugeicons/core-free-icons"
+import {
+  Camera01Icon,
+  CreditCardIcon,
+  Target02Icon,
+} from "@hugeicons/core-free-icons"
 
 import Image from "next/image"
-import Link from "next/link"
 
+import { AppStoreBadge } from "@/components/app-store-badge"
+import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
-import { WaitlistForm } from "@/components/waitlist-form"
 
 const features = [
   {
-    icon: Coins01Icon,
-    title: "Put money on your goals",
-    body: "Set a goal, a dollar amount, and a deadline. The money is held by Stripe while the goal is active. Succeed and it's returned to you; fail and it's forfeited.",
+    icon: Target02Icon,
+    title: "You choose the stakes",
+    body: "Put money on it, name a friend who hears about it, or lock yourself out of your habits for a while. Or just give your word.",
   },
   {
-    icon: LockIcon,
-    title: "Commitments that lock",
-    body: "Break a commitment and the app locks. To get back in, you pay a small fee or wait out a cooldown. Your streak and history reset either way.",
+    icon: CreditCardIcon,
+    title: "Charged only if you miss",
+    body: "A money stake saves your card and charges nothing up front. Miss and you're charged once, the amount you set: $1 to $50 a stake, never more than $250 on the line at once.",
   },
   {
     icon: Camera01Icon,
-    title: "Verified check-ins",
-    body: "Logs are checked with photo analysis, location, and timers, so a check-in means the work actually happened.",
+    title: "Proof, not the honor system",
+    body: "Every check-in is proven: a photo AI checks, a location check-in where you said you'd be, or a timer you can't leave.",
   },
 ]
 
 const steps = [
   {
-    title: "Set a goal and stake it",
-    body: "Pick a habit or a goal, choose an amount and a deadline, and Ante holds the stake through Stripe.",
+    title: "Pick one thing",
+    body: "A daily or weekly habit, or a goal with a deadline, and how you'll prove it.",
   },
   {
-    title: "Check in as you go",
-    body: "One-tap logging for routine habits, with verification when it matters.",
+    title: "Put something on the line",
+    body: "Money on your card, a friend who finds out, a lockout, or just your word.",
   },
   {
-    title: "Get your money back",
-    body: "Hit the goal by the deadline and the stake is released to you. Miss it and the stake is forfeited.",
+    title: "Check in with proof",
+    body: "Take the photo, check in where you said you'd be, or run the timer. Keep it up and nothing happens.",
+  },
+  {
+    title: "Miss it, and it costs you",
+    body: "Your card is charged once, your friend gets one email, or your habits freeze for 1, 3 or 7 days. If a charge looks wrong, contest it in the app and a person reviews it.",
   },
 ]
 
@@ -49,17 +57,17 @@ export default function Page() {
         <section className="flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-6">
             <span className="w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-              Coming soon to iOS
+              For iPhone
             </span>
             <h1 className="font-heading text-4xl text-balance sm:text-5xl">
               Habit tracking with real stakes.
             </h1>
             <p className="max-w-xl text-lg text-muted-foreground">
-              Ante is a habit and goal tracking app. You put money on a goal,
-              check in with verified logs, and get the money back when you
-              follow through. If you don&apos;t, you lose it.
+              Ante is a habit and goal tracker that holds you to what you said
+              you&apos;d do. Prove every check-in, and choose what a miss costs
+              you: money, a friend finding out, or a lockout.
             </p>
-            <WaitlistForm className="mt-2" />
+            <AppStoreBadge className="mt-2" />
           </div>
           <Image
             src="/ante-mockup.png"
@@ -106,30 +114,15 @@ export default function Page() {
         <section className="flex flex-col gap-3 rounded-2xl border p-6">
           <h2 className="font-medium">Pricing</h2>
           <p className="text-sm text-muted-foreground">
-            Ante is a flat-rate subscription. Stakes are held and released
-            through Stripe and are separate from the subscription. Subscriptions
-            and lockout fees are billed through the App Store.
+            Ante runs on Ante Pro, a subscription billed by Apple: monthly, or
+            yearly with a 7-day free trial. Money stakes are separate. Stripe
+            charges them to your own card, only when you miss, and nothing is
+            ever paid out to anyone. Lockouts are free.
           </p>
         </section>
       </main>
 
-      <footer className="flex flex-col gap-2 border-t py-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <span>© {new Date().getFullYear()} Ante</span>
-        <div className="flex gap-4">
-          <a
-            href="mailto:hello@useanteapp.com"
-            className="hover:text-foreground"
-          >
-            hello@useanteapp.com
-          </a>
-          <Link href="/privacy" className="hover:text-foreground">
-            Privacy
-          </Link>
-          <Link href="/terms" className="hover:text-foreground">
-            Terms
-          </Link>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }
