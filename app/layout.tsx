@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://useanteapp.com"),
   title: "Ante — Habit tracking with real stakes",
   description:
-    "Ante is a habit and goal tracking app. Put money on a goal, check in with verified logs, and get it back when you follow through. Join the waitlist.",
+    "Ante is a habit and goal tracker for iPhone. Prove every check-in, and choose what a miss costs you: money charged to your card, a friend finding out, or a lockout.",
 }
 
 export default function RootLayout({
