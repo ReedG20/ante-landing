@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated="October 1, 2026">
+    <LegalPage title="Privacy Policy" updated="October 2, 2026">
       <section>
         <h2>What we collect</h2>
         <ul>
@@ -98,9 +98,11 @@ export default function PrivacyPage() {
             check in at a location, to find the places around you.
           </li>
           <li>
-            <strong>OpenRouter</strong> passes your proof photos and the text of
-            your commitment to an AI model (Google Gemini), which checks whether
-            the proof matches. It also suggests ways to prove a new commitment.
+            <strong>OpenRouter</strong> passes your proof photos, the places
+            around you when you check in, and the text of your commitment to an
+            AI model (Google Gemini), which checks whether the proof matches. It
+            also suggests ways to prove a new commitment. The app asks before
+            sending anything, and you can switch it off in Me → Preferences.
           </li>
           <li>
             <strong>Resend</strong> sends our emails.
