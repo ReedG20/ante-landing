@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of Service" updated="October 1, 2026">
+    <LegalPage title="Terms of Service" updated="October 2, 2026">
       <section>
         <h2>The service</h2>
         <p>
@@ -92,6 +92,11 @@ export default function TermsPage() {
         <h2>Money stakes</h2>
         <ul>
           <li>
+            You must be 18 or older, and an adult where you live, to put money
+            on a commitment. Saving a card and signing the contract authorizes
+            Ante to charge that card the amount you chose if you miss.
+          </li>
+          <li>
             Each money stake is between $1 and $50. You can&apos;t have more
             than $250 on the line at once, across all your habits and goals.
           </li>
@@ -115,9 +120,9 @@ export default function TermsPage() {
             in the app.
           </li>
           <li>
-            Stake charges are a penalty you set for yourself. They don&apos;t
-            buy anything in the app, and nothing is paid out to you or anyone
-            else.
+            Stake charges are a penalty you set for yourself, and Ante keeps
+            them. They don&apos;t buy anything in the app, and nothing is paid
+            out to you or anyone else.
           </li>
         </ul>
       </section>
