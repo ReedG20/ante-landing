@@ -32,7 +32,7 @@ function PhotoStage() {
           className={`absolute size-7 border-white/40 ${corner}`}
         />
       ))}
-      <span className="absolute inset-x-5 h-0.5 rounded-full bg-glow shadow-[0_0_24px_6px_rgba(124,102,255,0.55)] motion-safe:animate-[scan_3.2s_ease-in-out_infinite] motion-reduce:top-1/2" />
+      <span className="absolute inset-x-4 h-0.5 rounded-full bg-glow shadow-[0_0_24px_6px_rgba(124,102,255,0.55)] motion-safe:animate-[scan_3.2s_ease-in-out_infinite] motion-reduce:top-1/2" />
       <span className="absolute bottom-5 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/60 px-3.5 py-1.5 text-sm font-semibold whitespace-nowrap text-white backdrop-blur">
         <HugeiconsIcon
           icon={Tick02Icon}

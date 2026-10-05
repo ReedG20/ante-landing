@@ -118,11 +118,11 @@ function MissVignette() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element -- tiny static icon */}
           <img
-            src="/ante-icon.svg"
+            src="/ante-icon.webp"
             alt=""
             width={40}
             height={40}
-            className="size-10 shrink-0 rounded-[10px]"
+            className="size-10 shrink-0"
           />
           <div className="min-w-0 flex-1">
             <div className="flex items-baseline justify-between gap-3">
