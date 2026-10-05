@@ -32,10 +32,10 @@ function Ticker() {
 
   return (
     <div
-      className="group relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] py-2"
+      className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] py-2"
       aria-label="Things people put on the line"
     >
-      <div className="flex w-max group-hover:[animation-play-state:paused] motion-safe:animate-[marquee_60s_linear_infinite]">
+      <div className="flex w-max motion-safe:animate-[marquee_60s_linear_infinite]">
         {row(false)}
         {row(true)}
       </div>

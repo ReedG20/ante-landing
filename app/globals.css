@@ -178,15 +178,26 @@
   }
 }
 
+/* From the viewfinder's top corners to its bottom ones (1rem in, less the
+   2px line). */
 @keyframes scan {
   0% {
-    top: 6%;
+    top: 1rem;
   }
   50% {
-    top: 88%;
+    top: calc(100% - 1rem - 2px);
   }
   100% {
-    top: 6%;
+    top: 1rem;
+  }
+}
+
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 

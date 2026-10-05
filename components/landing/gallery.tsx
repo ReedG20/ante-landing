@@ -21,13 +21,13 @@ function Gallery() {
           {GALLERY.map((shot) => (
             <li
               key={shot.id}
-              className="flex w-[232px] shrink-0 snap-start flex-col items-center gap-3 sm:w-[268px]"
+              className="flex w-[260px] shrink-0 snap-start flex-col items-center gap-3 sm:w-[310px]"
             >
               <div className="w-full rounded-[36px] bg-muted px-6 pt-7 pb-5 sm:px-7 sm:pt-8">
                 <PhoneShot
                   shot={shot}
-                  sizes="(min-width: 640px) 214px, 184px"
-                  className="mx-auto w-[184px] sm:w-[214px]"
+                  sizes="(min-width: 640px) 250px, 208px"
+                  className="mx-auto w-[208px] sm:w-[250px]"
                 />
               </div>
               <div className="flex flex-col items-center gap-0.5 text-center">

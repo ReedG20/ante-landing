@@ -1,6 +1,6 @@
 "use client"
 
-import { useId, useRef, useState } from "react"
+import { useEffect, useId, useRef, useState } from "react"
 import { HugeiconsIcon } from "@hugeicons/react"
 import {
   LockIcon,
@@ -273,8 +273,39 @@ const CHIPS: Record<Kind, string | null> = {
 
 function StakePicker() {
   const [kind, setKind] = useState<Kind>("money")
+  // Cycles through the stakes on its own until someone picks one. The
+  // progress bar's animation is the timer: when it fills, the next one's up.
+  const [auto, setAuto] = useState(true)
+  const [inView, setInView] = useState(false)
+  const [focused, setFocused] = useState(false)
   const id = useId()
+  const root = useRef<HTMLDivElement>(null)
   const tabs = useRef<(HTMLButtonElement | null)[]>([])
+
+  useEffect(() => {
+    const node = root.current
+    if (!node || !auto) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.3 }
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [auto])
+
+  const running = inView && !focused
+
+  function choose(next: Kind) {
+    setAuto(false)
+    setKind(next)
+  }
+
+  function advance() {
+    setKind((current) => {
+      const index = OPTIONS.findIndex((option) => option.kind === current)
+      return OPTIONS[(index + 1) % OPTIONS.length].kind
+    })
+  }
 
   function onKeyDown(event: React.KeyboardEvent, index: number) {
     const step =
@@ -286,12 +317,21 @@ function StakePicker() {
     if (step === 0) return
     event.preventDefault()
     const next = (index + step + OPTIONS.length) % OPTIONS.length
-    setKind(OPTIONS[next].kind)
+    choose(OPTIONS[next].kind)
     tabs.current[next]?.focus()
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-8">
+    <div
+      ref={root}
+      onFocus={() => setFocused(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setFocused(false)
+        }
+      }}
+      className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-8"
+    >
       <div
         role="tablist"
         aria-label="Stakes"
@@ -312,10 +352,10 @@ function StakePicker() {
               aria-selected={selected}
               aria-controls={`${id}-panel`}
               tabIndex={selected ? 0 : -1}
-              onClick={() => setKind(option.kind)}
+              onClick={() => choose(option.kind)}
               onKeyDown={(event) => onKeyDown(event, index)}
               className={cn(
-                "group flex items-start gap-4 rounded-[24px] border-2 p-4 text-left transition-colors outline-none focus-visible:ring-4 focus-visible:ring-ring/30 sm:p-5",
+                "group relative flex items-start gap-4 rounded-[24px] border-2 p-4 text-left transition-colors outline-none focus-visible:ring-4 focus-visible:ring-ring/30 sm:p-5",
                 selected
                   ? "border-primary bg-background"
                   : "border-transparent bg-muted hover:bg-accent"
@@ -357,6 +397,20 @@ function StakePicker() {
                   {option.detail}
                 </span>
               </span>
+              {selected && auto && (
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-5 bottom-2 h-1 overflow-hidden rounded-full bg-primary/15 motion-reduce:hidden"
+                >
+                  <span
+                    className="block h-full origin-left rounded-full bg-primary motion-safe:animate-[fill_4.5s_linear_forwards]"
+                    style={{
+                      animationPlayState: running ? "running" : "paused",
+                    }}
+                    onAnimationEnd={advance}
+                  />
+                </span>
+              )}
             </button>
           )
         })}

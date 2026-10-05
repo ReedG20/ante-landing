@@ -3,7 +3,7 @@ import { Camera01Icon, FlameIcon, Tick02Icon } from "@hugeicons/core-free-icons"
 
 import { AppStoreBadge } from "@/components/app-store-badge"
 import { CoachNote } from "@/components/coach-note"
-import { HandLoop } from "@/components/hand-loop"
+import { Highlighter } from "@/components/highlighter"
 import { PhoneShot } from "@/components/phone-shot"
 import { SCREENSHOTS } from "@/lib/screenshots"
 
@@ -22,11 +22,15 @@ function Hero() {
           For iPhone
         </span>
 
-        <h1 className="font-heading text-[2.75rem] leading-[0.98] tracking-tight text-balance sm:text-6xl lg:text-[4rem] xl:text-[4.5rem]">
-          Put something on the{" "}
-          <HandLoop strokeWidth={4.5} delay={700}>
-            line.
-          </HandLoop>
+        {/* A violet marker in both themes, cut down from Comico's tall line
+            box to sit on the letters (in ems, so it follows the type size).
+            The letters go white exactly where the marker covers them. */}
+        <h1 className="font-heading text-[2.75rem] leading-[0.98] tracking-tight text-balance sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] [&_.rough-annotation]:translate-y-[0.06em] [&_.rough-annotation_path]:[stroke:var(--primary)] [&_.rough-annotation_path]:[stroke-width:0.95em]">
+          Put something{" "}
+          <Highlighter delay={700} ink="#fff">
+            on the line
+          </Highlighter>
+          .
         </h1>
 
         <p className="max-w-[32rem] text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -39,7 +43,7 @@ function Hero() {
           <AppStoreBadge />
           <CoachNote
             arrow="left"
-            className="text-muted-foreground max-sm:[&_svg]:hidden"
+            className="text-muted-foreground [&_svg]:translate-y-1.5 max-sm:[&_svg]:hidden"
             tilt={-4}
           >
             it&apos;s cheaper to just do it.
@@ -48,7 +52,7 @@ function Hero() {
       </div>
 
       <div
-        className="relative mx-auto w-full max-w-[380px]"
+        className="relative mx-auto w-full max-w-[400px]"
         {...shown}
         style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
       >
@@ -58,22 +62,24 @@ function Hero() {
         <PhoneShot
           shot={SCREENSHOTS.today}
           preload
-          sizes="(min-width: 640px) 270px, 240px"
-          className="relative mx-auto w-[240px] sm:w-[270px]"
+          sizes="(min-width: 640px) 290px, 256px"
+          className="relative mx-auto w-[256px] drop-shadow-[0_24px_40px_rgba(0,0,0,0.18)] sm:w-[290px]"
         />
 
         <div
           className="absolute top-[18%] -left-1 motion-safe:animate-[float_6s_ease-in-out_infinite] sm:-left-6"
           style={{ "--tilt": "-4deg" } as React.CSSProperties}
         >
-          <StakeChip className="h-9 px-4 text-[15px]">$50 on it</StakeChip>
+          <StakeChip className="h-10 bg-stake px-4 text-[15px] text-white shadow-[0_10px_28px_-8px_rgba(255,57,31,0.6)]">
+            $50 on it
+          </StakeChip>
         </div>
 
         <div
           className="absolute top-[44%] -right-1 motion-safe:animate-[float_7s_ease-in-out_1s_infinite] sm:-right-5"
           style={{ "--tilt": "3deg" } as React.CSSProperties}
         >
-          <span className="inline-flex h-10 items-center gap-1.5 rounded-full border bg-background px-4 text-[15px] font-semibold">
+          <span className="inline-flex h-10 items-center gap-1.5 rounded-full bg-foreground px-4 text-[15px] font-semibold text-background shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)]">
             {/* Filled in the accent, as the app draws its streak flame. */}
             <HugeiconsIcon
               icon={FlameIcon}
@@ -90,22 +96,17 @@ function Hero() {
           className="absolute bottom-[14%] -left-2 motion-safe:animate-[float_8s_ease-in-out_2s_infinite] sm:-left-10"
           style={{ "--tilt": "-2deg" } as React.CSSProperties}
         >
-          <span className="inline-flex items-center gap-3 rounded-[20px] bg-proof py-2.5 pr-4 pl-2.5 text-white">
-            <span className="flex size-9 items-center justify-center rounded-[12px] bg-proof-panel text-glow-soft">
+          <span className="inline-flex items-center gap-3 rounded-[20px] bg-primary py-2.5 pr-4 pl-2.5 text-white shadow-[0_10px_30px_-8px_rgba(65,33,255,0.6)]">
+            <span className="flex size-9 items-center justify-center rounded-[12px] bg-white/15">
               <HugeiconsIcon icon={Camera01Icon} size={18} strokeWidth={1.75} />
             </span>
             <span className="flex flex-col leading-tight">
-              <span className="text-[11px] font-semibold tracking-wide text-white/55 uppercase">
+              <span className="text-[11px] font-semibold tracking-wide text-white/70 uppercase">
                 Photo proof
               </span>
               <span className="flex items-center gap-1 text-sm font-semibold">
                 Checked
-                <HugeiconsIcon
-                  icon={Tick02Icon}
-                  size={16}
-                  strokeWidth={2.4}
-                  className="text-glow"
-                />
+                <HugeiconsIcon icon={Tick02Icon} size={16} strokeWidth={2.4} />
               </span>
             </span>
           </span>
