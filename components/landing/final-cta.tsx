@@ -1,5 +1,5 @@
-import { AppStoreBadge } from "@/components/app-store-badge"
 import { CoachNote } from "@/components/coach-note"
+import { GetAnte } from "@/components/get-ante"
 import { Reveal } from "@/components/reveal"
 
 function FinalCta() {
@@ -22,7 +22,7 @@ function FinalCta() {
             Pick one thing you keep putting off. Put something on it. See how
             fast it stops being optional.
           </p>
-          <AppStoreBadge tone="white" />
+          <GetAnte tone="white" />
           <CoachNote className="text-white/75" tilt={-4}>
             go on. pick one thing.
           </CoachNote>
