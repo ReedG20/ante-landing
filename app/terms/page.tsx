@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 import { LegalPage } from "@/components/legal-page"
-import { SUPPORT_EMAIL } from "@/lib/site"
+import { COMPANY_NAME, SUPPORT_EMAIL } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Terms of Service — Ante",
@@ -11,13 +11,15 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of Service" updated="October 2, 2026">
+    <LegalPage title="Terms of Service" updated="October 12, 2026">
       <section>
         <h2>The service</h2>
         <p>
-          Ante is a habit and goal tracking app for iPhone. You make a
+          Ante is a habit and goal tracking app for iPhone, operated by{" "}
+          {COMPANY_NAME} (&ldquo;we&rdquo; or &ldquo;us&rdquo;). You make a
           commitment, prove each check-in in the app, and choose what happens if
-          you miss it. These terms apply to the app and to this website. By
+          you miss it. These terms are an agreement between you and{" "}
+          {COMPANY_NAME}, and they apply to the app and to this website. By
           using Ante, you agree to them.
         </p>
       </section>
@@ -93,8 +95,8 @@ export default function TermsPage() {
         <ul>
           <li>
             You must be 18 or older, and an adult where you live, to put money
-            on a commitment. Saving a card and signing the contract authorizes
-            Ante to charge that card the amount you chose if you miss.
+            on a commitment. Saving a card and signing the contract authorizes{" "}
+            {COMPANY_NAME} to charge that card the amount you chose if you miss.
           </li>
           <li>
             Each money stake is between $1 and $50. You can&apos;t have more
@@ -120,9 +122,9 @@ export default function TermsPage() {
             in the app.
           </li>
           <li>
-            Stake charges are a penalty you set for yourself, and Ante keeps
-            them. They don&apos;t buy anything in the app, and nothing is paid
-            out to you or anyone else.
+            Stake charges are a penalty you set for yourself, and {COMPANY_NAME}{" "}
+            keeps them. They don&apos;t buy anything in the app, and nothing is
+            paid out to you or anyone else.
           </li>
         </ul>
       </section>
@@ -217,7 +219,7 @@ export default function TermsPage() {
       <section>
         <h2>Contact</h2>
         <p>
-          Questions about these terms? Email{" "}
+          Ante is operated by {COMPANY_NAME}. Questions about these terms? Email{" "}
           <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
         </p>
       </section>

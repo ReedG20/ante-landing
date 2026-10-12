@@ -4,6 +4,7 @@ import localFont from "next/font/local"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { COMPANY_NAME } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
   title: "Ante — Put something on the line",
   description:
     "Ante is a habit and goal tracker for iPhone. Prove every check-in, and choose what a miss costs you: money charged to your card, a friend finding out, or a lockout.",
+  publisher: COMPANY_NAME,
 }
 
 export default function RootLayout({

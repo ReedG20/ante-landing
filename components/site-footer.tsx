@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { SUPPORT_EMAIL } from "@/lib/site"
+import { COMPANY_NAME, SUPPORT_EMAIL } from "@/lib/site"
 
 function SiteFooter() {
   return (
@@ -15,7 +15,9 @@ function SiteFooter() {
             height={11}
             className="h-3.5 w-auto opacity-70 dark:invert"
           />
-          <span>© {new Date().getFullYear()} Ante</span>
+          <span>
+            © {new Date().getFullYear()} {COMPANY_NAME}
+          </span>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-2">
           <a href={`mailto:${SUPPORT_EMAIL}`} className="hover:text-foreground">

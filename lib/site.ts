@@ -1,3 +1,6 @@
+// The legal entity that operates Ante. Named in the footer and the legal pages.
+const COMPANY_NAME = "The Commitment Company LLC"
+
 const SUPPORT_EMAIL = "support@useanteapp.com"
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6814632907"
@@ -7,4 +10,4 @@ const APP_STORE_URL = "https://apps.apple.com/app/id6814632907"
 // and /get redirects to the listing again.
 const LAUNCHED = false
 
-export { APP_STORE_URL, LAUNCHED, SUPPORT_EMAIL }
+export { APP_STORE_URL, COMPANY_NAME, LAUNCHED, SUPPORT_EMAIL }
