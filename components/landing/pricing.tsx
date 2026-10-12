@@ -1,8 +1,9 @@
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Tick02Icon } from "@hugeicons/core-free-icons"
 
-import { AppStoreBadge } from "@/components/app-store-badge"
+import { GetAnte } from "@/components/get-ante"
 import { Reveal } from "@/components/reveal"
+import { LAUNCHED } from "@/lib/site"
 
 import { SectionHeading } from "./section-heading"
 
@@ -61,10 +62,12 @@ function Pricing() {
               ))}
             </ul>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t pt-6">
-              <AppStoreBadge />
-              <p className="text-sm text-muted-foreground">
-                Start with a 7-day free trial.
-              </p>
+              <GetAnte />
+              {LAUNCHED && (
+                <p className="text-sm text-muted-foreground">
+                  Start with a 7-day free trial.
+                </p>
+              )}
             </div>
           </div>
 

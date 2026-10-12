@@ -1,11 +1,12 @@
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Camera01Icon, FlameIcon, Tick02Icon } from "@hugeicons/core-free-icons"
 
-import { AppStoreBadge } from "@/components/app-store-badge"
 import { CoachNote } from "@/components/coach-note"
+import { GetAnte } from "@/components/get-ante"
 import { Highlighter } from "@/components/highlighter"
 import { PhoneShot } from "@/components/phone-shot"
 import { SCREENSHOTS } from "@/lib/screenshots"
+import { LAUNCHED } from "@/lib/site"
 
 import { StakeChip } from "./stake-chip"
 
@@ -19,7 +20,7 @@ function Hero() {
       <div className="flex flex-col items-start gap-6" {...shown}>
         <span className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
           <span className="size-1.5 rounded-full bg-primary" />
-          For iPhone
+          {LAUNCHED ? "For iPhone" : "Coming soon to iPhone"}
         </span>
 
         {/* A violet marker in both themes, cut down from Comico's tall line
@@ -39,15 +40,22 @@ function Hero() {
           money, a friend finding out, or a lockout.
         </p>
 
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-4 pt-1">
-          <AppStoreBadge />
-          <CoachNote
-            arrow="left"
-            className="text-muted-foreground [&_svg]:translate-y-1.5 max-sm:[&_svg]:hidden"
-            tilt={-4}
-          >
-            it&apos;s cheaper to just do it.
-          </CoachNote>
+        <div
+          id="waitlist"
+          className="flex w-full scroll-mt-24 flex-wrap items-center gap-x-6 gap-y-4 pt-1"
+        >
+          <GetAnte />
+          {/* The note points at the badge; the waitlist form is too wide to
+              leave it room, and carries its own line underneath. */}
+          {LAUNCHED && (
+            <CoachNote
+              arrow="left"
+              className="text-muted-foreground [&_svg]:translate-y-1.5 max-sm:[&_svg]:hidden"
+              tilt={-4}
+            >
+              it&apos;s cheaper to just do it.
+            </CoachNote>
+          )}
         </div>
       </div>
 

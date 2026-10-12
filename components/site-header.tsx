@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { ThemeToggle } from "@/components/theme-toggle"
+import { LAUNCHED } from "@/lib/site"
 
 const NAV = [
   { href: "/#how", label: "How it works" },
@@ -41,10 +42,10 @@ function SiteHeader() {
         <div className="flex items-center gap-1.5">
           <ThemeToggle />
           <a
-            href="/get"
+            href={LAUNCHED ? "/get" : "/#waitlist"}
             className="inline-flex h-9 items-center rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] active:scale-[0.98]"
           >
-            Get Ante
+            {LAUNCHED ? "Get Ante" : "Join the waitlist"}
           </a>
         </div>
       </div>
