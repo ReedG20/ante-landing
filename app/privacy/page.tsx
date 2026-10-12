@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 import { LegalPage } from "@/components/legal-page"
-import { SUPPORT_EMAIL } from "@/lib/site"
+import { COMPANY_NAME, SUPPORT_EMAIL } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Ante",
@@ -10,7 +10,15 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated="October 2, 2026">
+    <LegalPage title="Privacy Policy" updated="October 12, 2026">
+      <section>
+        <h2>Who we are</h2>
+        <p>
+          Ante is operated by {COMPANY_NAME} (&ldquo;we&rdquo; or
+          &ldquo;us&rdquo;). We are responsible for the personal information
+          described in this policy, which covers the Ante app and this website.
+        </p>
+      </section>
       <section>
         <h2>What we collect</h2>
         <ul>
@@ -189,8 +197,9 @@ export default function PrivacyPage() {
       <section>
         <h2>Contact</h2>
         <p>
-          Questions about your privacy? Email{" "}
-          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+          Questions about your privacy, or requests about your data? Email{" "}
+          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> to reach{" "}
+          {COMPANY_NAME}.
         </p>
       </section>
     </LegalPage>
