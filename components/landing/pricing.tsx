@@ -3,7 +3,6 @@ import { Tick02Icon } from "@hugeicons/core-free-icons"
 
 import { GetAnte } from "@/components/get-ante"
 import { Reveal } from "@/components/reveal"
-import { LAUNCHED } from "@/lib/site"
 
 import { SectionHeading } from "./section-heading"
 
@@ -39,9 +38,7 @@ function Pricing() {
                     PRO
                   </span>
                 </p>
-                <p className="text-muted-foreground">
-                  Monthly, or yearly with a 7-day free trial.
-                </p>
+                <p className="text-muted-foreground">Monthly or yearly.</p>
               </div>
             </div>
             <ul className="flex flex-col gap-4">
@@ -63,11 +60,6 @@ function Pricing() {
             </ul>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t pt-6">
               <GetAnte />
-              {LAUNCHED && (
-                <p className="text-sm text-muted-foreground">
-                  Start with a 7-day free trial.
-                </p>
-              )}
             </div>
           </div>
 
