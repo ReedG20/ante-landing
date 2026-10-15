@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of Service" updated="October 12, 2026">
+    <LegalPage title="Terms of Service" updated="October 15, 2026">
       <section>
         <h2>The service</h2>
         <p>
@@ -34,12 +34,6 @@ export default function TermsPage() {
           <li>
             There is a monthly plan and a yearly plan. Prices are shown in the
             app before you buy.
-          </li>
-          <li>
-            The yearly plan comes with a 7-day free trial if your Apple ID is
-            eligible. Unless you cancel before the trial ends, the yearly price
-            is charged when it does. Any unused part of a trial ends when you
-            buy a subscription.
           </li>
           <li>
             Payment is charged to your Apple ID when you confirm the purchase.
