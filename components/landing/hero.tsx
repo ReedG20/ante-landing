@@ -78,7 +78,7 @@ function Hero() {
           className="absolute top-[18%] -left-1 motion-safe:animate-[float_6s_ease-in-out_infinite] sm:-left-6"
           style={{ "--tilt": "-4deg" } as React.CSSProperties}
         >
-          <StakeChip className="h-10 bg-stake px-4 text-[15px] text-white shadow-[0_10px_28px_-8px_rgba(240,40,75,0.6)]">
+          <StakeChip className="h-10 bg-stake px-4 text-[15px] text-white shadow-[0_10px_28px_-8px_rgba(236,47,60,0.6)]">
             $50 on it
           </StakeChip>
         </div>
