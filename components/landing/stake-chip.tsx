@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils"
 
-// The red-orange pill the app puts on anything with a stake: "$20 on it",
-// "Sam's watching", "3-day lock". Red-orange means this costs you.
+// The crimson pill the app puts on anything with a stake: "$20 on it",
+// "Sam's watching", "3-day lock". Crimson means this costs you.
 function StakeChip({
   children,
   className,
