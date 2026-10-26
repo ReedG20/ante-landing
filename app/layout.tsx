@@ -33,7 +33,9 @@ const description =
 
 // The share card's image is app/opengraph-image.tsx; X falls back to it too.
 export const metadata: Metadata = {
-  metadataBase: new URL("https://useanteapp.com"),
+  // The www host, since the bare domain redirects there and link scrapers
+  // (LinkedIn especially) don't always follow a redirect to the image.
+  metadataBase: new URL("https://www.useanteapp.com"),
   title,
   description,
   publisher: COMPANY_NAME,
