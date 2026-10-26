@@ -27,12 +27,24 @@ const fontNote = Mansalva({
   variable: "--font-mansalva",
 })
 
+const title = "Ante — Put something on the line"
+const description =
+  "Ante is a habit and goal tracker for iPhone. Prove every check-in, and choose what a miss costs you: money charged to your card, a friend finding out, or a lockout."
+
+// The share card's image is app/opengraph-image.tsx; X falls back to it too.
 export const metadata: Metadata = {
   metadataBase: new URL("https://useanteapp.com"),
-  title: "Ante — Put something on the line",
-  description:
-    "Ante is a habit and goal tracker for iPhone. Prove every check-in, and choose what a miss costs you: money charged to your card, a friend finding out, or a lockout.",
+  title,
+  description,
   publisher: COMPANY_NAME,
+  openGraph: {
+    type: "website",
+    siteName: "Ante",
+    url: "/",
+    title,
+    description,
+  },
+  twitter: { card: "summary_large_image", title, description },
 }
 
 export default function RootLayout({
